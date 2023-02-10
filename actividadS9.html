@@ -1,0 +1,113 @@
+<!-- 1. Crea un <h1>texto inicial</h1> en un archivo .html y cambia su texto con JavaScript. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 9</title>
+    <style >
+        #productos{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="parrafo1">Hola MUNDO!</h1>
+
+
+    <script>
+        texto1 = ['Hola MEXICO'];
+        document.getElementById("parrafo1").innerHTML = texto1;
+
+    </script>
+
+    <hr>
+
+    <!-- 2. Crean una lista (<ul>, <li>) en tu HTML usando JavaScript -->
+    <h1>Crear una lista con JavaScript</h1>
+    <li>Desarrollo web - FrontEnd</li>
+    <li>Desarrollo web - Backend</li>
+    <li>Tecnologias Emergentes</li>
+    <li>Metodologías Agiles</li>
+
+    <script>
+        
+        let lista = document.getElementsByTagName('li');
+    </script>
+
+    <hr>
+
+    <!-- 3. Usando el arreglo de la imagen, inserta en tu HTML un elemento nuevo que contenga: marca, cantidad y precio, todo en color negro, y que el valor de cada llave (key) se vea en color rojo (plantilla literal), ejemplo:-->
+    <div>
+        <h5>Marca :</h5><p id="titulo">NIKE </p>
+    </div>
+    
+    
+
+    <script>
+        let dom_elemento = document.getElementById('titulo');
+        dom_elemento.style.color = "#ff0000";
+    </script>
+
+    <hr>
+
+    <!-- 4. Crea un botón de mostrar productos y uno de ocultar productos en el HTML, que cuando hagas clic sobre él se muestren los productos o se oculten.  -->
+
+    <h1>Mostrar y ocultar productos</h1>
+    <button type="button" onclick="mostrarProducto();">Mostrar Productos</button>
+    <button type="button" onclick="ocultarProducto();">Ocultar Productos</button>
+
+    <div id="productos">
+        <h5>Marca: NIKE</h5>
+        <h5>Stock: 8</h5>
+        <h5>Precio: 150.3</h5>
+
+        <h5>Marca: PUMA</h5>
+        <h5>Stock: 7</h5>
+        <h5>Precio: 80.5</h5>
+
+        <h5>Marca: ADIDAS</h5>
+        <h5>Stock: 6</h5>
+        <h5>Precio: 70.41</h5>
+
+    </div>
+
+    <script>
+        function mostrarProducto(){
+            document.getElementById('productos').style.display = 'block';
+        }
+
+        function ocultarProducto(){
+            document.getElementById('productos').style.display = 'none';
+        }
+    </script>
+
+    <hr>
+
+    
+<!-- 5.Crea una página web que: Cuando ingrese el usuario por primera vez pida el nombre, por ejemplo: -->
+<h1> Hola me podrias dar tu nombre?</h1>
+
+<input id="identificador" type="text" placeholder="Introduce tu nombre">
+<button onclick="guardar_item();">Guardar</button>
+<button onclick="borrar_items();">reiniciar</button>
+
+<script>
+    const guardar_item = ()=> {
+    //variables para manipular cada input:
+    let id_item = document.getElementById('identificador');
+    }
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
+<!-- 5.Crea una página web que: Cuando ingrese el usuario por primera vez pida el nombre, por ejemplo: -->

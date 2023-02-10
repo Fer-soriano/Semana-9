@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+<body>
+    <h1>EVENTOS:</h1>
+    <!--EJEMPLO1:-->
+    <div>
+        <h2>Botón 0: Atributo:</h2>
+        <button id="btn0" onclick="btn_evento();">Da click</button>
+    </div>
+
+    <script>
+        const btn_evento = () => {
+            alert('Diste un click en el botón');
+        }
+    </script>
+
+    <hr>
+
+    <!--EJEMPLO 2:-->
+    <div>
+        <h2>Botón 1: Listener:</h2>
+        <button id="btn1">Dar click</button>
+    </div>
+    
+    <hr>
+
+    <div>
+        <h2>Botón 2: On-event:</h2>
+        <button id="btn2">Dar click</button>
+    </div>
+
+    <script>
+        //variables para cada uno de los botones
+        let boton1 = document.getElementById('btn1');
+        let boton2 = document.getElementById('btn2');
+
+        const btn_evento2 = () => {
+            alert('Diste un click en el botón');
+        }
+        
+        boton1.addEventListener('click', () =>{
+            btn_evento2();
+        })
+
+        /*boton2.onclick(function(){
+            btn_evento2();
+        })*/
+
+        boton2.onclick = () => {
+            btn_evento2();
+        }
+    </script>
+
+
+
+</body>
+</html>

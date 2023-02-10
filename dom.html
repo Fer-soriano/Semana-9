@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <p id="parrafo1">Hola Mundo!</p>
+    
+    <script>
+        //Manipular elementos por ID:
+        let parrafo = document.getElementById('parrafo1');
+    </script>
+
+    <hr>
+
+    <div class="categorias">Inicio</div>
+    <div class="categorias">Productos</div>
+    <div class="categorias">Pagos</div>
+
+    <script>
+        //Manipular elementos por clase
+        let categoria = document.getElementsByClassName('categorias');
+    </script>
+
+    <hr>
+
+    <li>Desarrollo web - FrontEnd</li>
+    <li>Desarrollo web - Backend</li>
+    <li>Tecnologias Emergentes</li>
+    <li>Metodologías Agiles</li>
+
+    <script>
+        //Manipular elementos por etiqueta:
+        let lista = document.getElementsByTagName('li');
+    </script>
+
+    <hr>
+
+    <!--Ejemplo 1 -->
+    <h1 id="titulo1">Manipulación de elementos</h1>
+    <p id="parrafo2">Lorem ipsum dolor, adipisicing elit. Sunt autem reiciendis harum dolor. Dolor voluptates, autem ipsa placeat necessitatibus laborum libero nemo, ducimus accusantium fugit saepe quos, natus porro. Odio</p>
+
+    <script>
+        let dom_elemento = document.getElementById('parrafo2');
+        dom_elemento.style.color = "#F27C21";
+
+    </script>
+
+    <hr>
+
+    <!--Ejemplo 2 -->
+    <section id="seccion1"></section>
+
+    <script>
+        let nuevo_elemento = document.createElement('div');
+        nuevo_elemento.innerHTML = '<h1>Esto es un encabezado creado por javascript</h1>';
+
+        let elemento_padre = document.getElementById('seccion1');
+        elemento_padre.appendChild(nuevo_elemento);
+    </script>
+
+
+</body>
+</html>

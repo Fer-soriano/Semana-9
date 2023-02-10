@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage 1</title>
+</head>
+
+<body>
+
+    <!--Ejemplo almacen: -->
+    <h1>Local Storage</h1>
+
+    <input id="identificador_item" type="text" placeholder="Gorra, Bufanda, Lentes">
+    <input id="valor_item" type="text" placeholder="Marca">
+
+    <button onclick="guardar_item();">Guardar</button>
+    <button onclick="borrar_items();">Borrar almacenamiento</button>
+
+    <div style="display: flex; flex-direction:column;">
+        <h2 id="encabezado_inventario">Inventario</h2>
+        <h3>Identificador: valor</h3>
+        <div id="inventario">
+
+        </div>
+    </div>
+
+    <script>
+        //guardar item:
+        const guardar_item = ()=> {
+            //variables para manipular cada input:
+            let id_item = document.getElementById('identificador_item');
+            let val_item = document.getElementById('valor_item');
+
+            //condicion para validar que se ingresen los valores en cada input:
+            if(id_item.value == null || id_item.value == '') {
+                alert('Items vacios');
+            }else{
+                //obtener los valores ingresados en cada input:
+                localStorage.setItem(`${id_item.value}` ,`${val_item.value}`);
+            }
+
+            //variable para manipular el div donde se mostraran los items:
+            let set_inventario = document.getElementById('inventario');
+
+            //crear una cadena de texto del contenido en localStorage:
+            let stringLocal = JSON.stringify(localStorage);
+
+            //crear un objeto Json
+            let objectLocal = JSON.parse(stringLocal);
+
+            //Borramos cualquier contenido en el div donde se mostraran los items:
+            set_inventario.innerText = '';
+
+            //Agregamos contenidos HTML por cada dato en nuestro objet JSon:
+            Object.entries(objectLocal).forEach(([key, value]) => {
+                set_inventario.innerHTML += `<p id="${key}">${key}: ${value} <button onclick="borrar_item('${key}');">Eliminar</button> </p> <br>`;
+            });
+
+            //Quitamos cualquier texto ingresado en cada input
+            id_item.value='';
+            val_item.value = '';
+        }
+
+        //Borrar item
+        const borrar_item = (id)=>{
+            //selector al elemento que contiene el item a borrar:
+            let item = document.getElementById(`${id}`);
+            localStorage.removeItem(`${id}`);
+            item.remove();
+        }
+
+        //Limpiar localStorage
+        
+
+    </script>
+    
+</body>
+</html>
